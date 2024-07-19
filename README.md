@@ -1,5 +1,7 @@
 # Project-4
 
+## Creating and optimising a Logistic Regression Model to analyse employee attrition (the likelihood of them leaving the company)
+
 Code sources:
 * [Dataset](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset/discussion/233758)
 * [Explanation of Dataset](https://inseaddataanalytics.github.io/INSEADAnalytics/groupprojects/January2018FBL/IBM_Attrition_VSS.html)
