@@ -17,18 +17,20 @@ We executed a SQL query with Python and then converted the result into a datafra
 ## Step 3 
 We created a Logistic Regression model to use to analyse attrition, and as a base for further optimisation.
 
+An accuracy score of 83% was garnered, and an in depth analysis can be gained by the confusion matrix, which we exported as a seaborn-created heatmap.
+
 ## Step 4
 We aimed to investigate optimsation by reducing the number of features we inputted into the model. We endeavoured to get the most important features by trying these methods:
 * Correlation Analysis
-   * Discerning how strong the correlation is between attrition and other features, using only the strongest features in our model.
+   * Discerning how strong the correlation is between attrition and other features, using only the strongest features in our model. We used a heatmap of correlation to discern the most highly correlated features.
 * Permutations
-   * Using permutation analysis: shuffling the records in 1 feature and seeing if there is an impact on accuracy. If there is a significant change in accuracy, then the feature is important.
+   * Using permutation analysis: shuffling the records in 1 feature and seeing if there is an impact on accuracy. If there is a significant change in accuracy, then the feature is important. A bar plot of most important features was created.
 * RFE (Recursive Feature Elimination)
-   * Repeatedly eliminating the least important feature until we get our desired number of features for analysis.
+   * Repeatedly eliminating the least important feature until we get our desired number of features for analysis. An array of most important features was outputed and used for further changed.
 * Further pre-processing
    * Enhancing the pre-processing process by droppign more columns etc.
 * Comparing Model Coefficients
-   * Obtaining the most important features by looking at the absolute weights of the model coefficients.
+   * Obtaining the most important features by looking at the absolute weights of the model coefficients. An array of coefficients was converted to a bar plot for further use.
 
 ## Step 5
 We comapred and contrasted each of these methods to identify what was most suitable for our model. Our base model had an accuracy score of 83%, and was almost perfect recall. As for optimisation, we found that RFE provided the highest accuracy, with 85%, however, other methods came quite close.
