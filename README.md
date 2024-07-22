@@ -8,9 +8,17 @@ Attrition levels in the UK are close to 20%, which is the maximum threshold for 
 
 We used an employee attrition dataset (from IBM, sourced via Kaggle) with variety of metrics ranging from age, gender, to job involvement, salary, stock options etc., to create a logistic regression model to predict attrition.
 
-Data was imported from SQL via the psycopg2 module, and converted into a dataframe with PANDAS, for further analysis and processing with Python. Target (Attrition) and features (all other columns) were identified, and the dataset was cleaned by removing all redundant columns. Outliers were looked for in relevant columns but none were found.
+## Step 1
+Data was imported from SQL via the psycopg2 module.
 
-We used a logistic regression model as our base model. We aimed to investigate optimsation by reducing the number of features we inputted into the model. We endeavoured to get the most important features by trying these methods:
+## Step 2 
+We executed a SQL query with Python and then converted the result into a dataframe with PANDAS, for further analysis and processing with Python. Target (Attrition) and features (all other columns) were identified, and the dataset was cleaned by removing all redundant columns. Outliers were looked for in relevant columns but none were found.
+
+## Step 3 
+We created a Logistic Regression model to use to analyse attrition, and as a base for further optimisation.
+
+## Step 4
+We aimed to investigate optimsation by reducing the number of features we inputted into the model. We endeavoured to get the most important features by trying these methods:
 * Correlation Analysis
    * Discerning how strong the correlation is between attrition and other features, using only the strongest features in our model.
 * Permutations
@@ -22,6 +30,7 @@ We used a logistic regression model as our base model. We aimed to investigate o
 * Comparing Model Coefficients
    * Obtaining the most important features by looking at the absolute weights of the model coefficients.
 
+## Step 5
 We comapred and contrasted each of these methods to identify what was most suitable for our model. Our base model had an accuracy score of 83%, and was almost perfect recall. As for optimisation, we found that RFE provided the highest accuracy, with 85%, however, other methods came quite close.
 
 We did observe some limitations and possible enhancements to some of our methods:
@@ -31,6 +40,7 @@ We did observe some limitations and possible enhancements to some of our methods
 * We attempted to combine further pre-processing with RFE but the result ended up with the same accuracy; combining other methods to reduce the number of features may also be a potential future target.
 * Binning data – We had a lot of features - although used to reduce errors, it may get complicated based on the dataset we have got.
 
+## Appendix
 Code sources:
 * [Dataset](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset/discussion/233758)
 * [Explanation of Dataset](https://inseaddataanalytics.github.io/INSEADAnalytics/groupprojects/January2018FBL/IBM_Attrition_VSS.html)
