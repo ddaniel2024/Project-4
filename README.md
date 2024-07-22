@@ -4,7 +4,11 @@
 
 <em>attrition - the likelihood that an employee leaves employement, for whatever reason, voluntary or involuntary</em>
 
-We used an employee attrition (from IBM) dataset with variety of metrics ranging from age, gender, to job involvement, salary, stock options etc., to create a logistic regression model to predict attrition.
+Attrition levels in the UK are close to 20%, which is the maximum threshold for company efficacy. In our project, we aim to investigate factors that are likely to effect attrition, as well as create a Logistic Regression model that is able to accurately predict employee attrition given a range of backgorund variables.
+
+We used an employee attrition dataset (from IBM, sourced via Kaggle) with variety of metrics ranging from age, gender, to job involvement, salary, stock options etc., to create a logistic regression model to predict attrition.
+
+Data was imported from SQL via the psycopg2 module, and converted into a dataframe with PANDAS, for further analysis and processing with Python. Target (Attrition) and features (all other columns) were identified, and the dataset was cleaned by removing all redundant columns. Outliers were looked for in relevant columns but none were found.
 
 We used a logistic regression model as our base model. We aimed to investigate optimsation by reducing the number of features we inputted into the model. We endeavoured to get the most important features by trying these methods:
 * Correlation Analysis
@@ -18,7 +22,14 @@ We used a logistic regression model as our base model. We aimed to investigate o
 * Comparing Model Coefficients
    * Obtaining the most important features by looking at the absolute weights of the model coefficients.
 
-We comapred and contrasted each of these methods to identify what was most suitable for our model.
+We comapred and contrasted each of these methods to identify what was most suitable for our model. Our base model had an accuracy score of 83%, and was almost perfect recall. As for optimisation, we found that RFE provided the highest accuracy, with 85%, however, other methods came quite close.
+
+We did observe some limitations and possible enhancements to some of our methods:
+* Correlation analysis performed fairly well, but correlation does not necessarily signify causation; we would be getting an accurate result but trying to apply the model in real life and use the highlighted features to address employee attrition may not be successful.
+* The coefficient analysis model had a score of 0% in both precision and recall for “no attrition” but high scores for “yes” attrition, but it misidentifies the “no attrition” employees.
+* Permutation importance and RFE both use iterative methods when they run. We set the number of iterations to 100 as a standard. More iterations could provide more accurate results, but would take up more time.
+* We attempted to combine further pre-processing with RFE but the result ended up with the same accuracy; combining other methods to reduce the number of features may also be a potential future target.
+* Binning data – We had a lot of features - although used to reduce errors, it may get complicated based on the dataset we have got.
 
 Code sources:
 * [Dataset](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset/discussion/233758)
