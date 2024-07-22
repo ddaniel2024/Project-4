@@ -1,6 +1,8 @@
 # Project-4
 
-## Creating and optimising a Logistic Regression Model to analyse employee attrition (the likelihood of them leaving the company)
+## Creating and optimising a Logistic Regression Model to analyse employee attrition
+
+<em>attrition - the likelihood that an employee leaves employement, for whatever reason, voluntary or involuntary</em>
 
 We used an employee attrition (from IBM) dataset with variety of metrics ranging from age, gender, to job involvement, salary, stock options etc., to create a logistic regression model to predict attrition.
 
